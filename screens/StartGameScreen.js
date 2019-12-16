@@ -9,12 +9,13 @@ import {
   Keyboard,
   Alert
 } from "react-native";
+import MainButton from "../components/MainButton";
 import Card from "../components/Card";
 import Input from "../components/Input";
-import NumberContainer from '../components/NumberContainer'
+import NumberContainer from "../components/NumberContainer";
 import colors from "../constants/colors";
-import TitleText from '../components/TitleText';
-import BodyText from '../components/BodyText';
+import TitleText from "../components/TitleText";
+import BodyText from "../components/BodyText";
 
 const StartGameScreen = props => {
   const [value, setValue] = useState("");
@@ -48,7 +49,9 @@ const StartGameScreen = props => {
       <Card style={styles.summaryContainer}>
         <BodyText>You selected</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="START GAME" onPress={()=>props.onStartGame(selectedNumber)}/>
+        <MainButton onPress={() => props.onStartGame(selectedNumber)}>
+          START GAME
+        </MainButton>
       </Card>
     );
   }
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    marginVertical: 10,
+    marginVertical: 10
   },
   inputContainer: {
     width: 300,
@@ -125,7 +128,7 @@ const styles = StyleSheet.create({
   },
   summaryContainer: {
     marginTop: 20,
-    alignItems:'center'
+    alignItems: "center"
   }
 });
 
